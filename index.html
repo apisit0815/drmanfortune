@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หมอแมน ทำนายดวงชะตา</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <div id="screen-welcome" class="screen active">
+            <div class="mystic-icon">🔮</div>
+            <h1>ยินดีต้อนรับสู่ระบบทำนายดวง</h1>
+            <h2>โดย หมอแมน</h2>
+            <p>ให้ไพ่และดวงดาวนำทางคุณ... พร้อมที่จะเปิดคำทำนายหรือยัง?</p>
+            <button onclick="showScreen('screen-form')" class="btn-primary">เริ่มต้นทำนายดวง 🌟</button>
+        </div>
+
+        <div id="screen-form" class="screen">
+            <h2>📜 บอกข้อมูลกับหมอแมนสักนิด</h2>
+            <form id="fortune-form">
+                <div class="form-group">
+                    <label>ชื่อเล่นของคุณ:</label>
+                    <input type="text" id="nickname" required placeholder="ใส่ชื่อเล่น...">
+                </div>
+                <div class="form-group">
+                    <label>วัน/เดือน/ปีเกิด:</label>
+                    <input type="date" id="birthdate" required>
+                </div>
+                <div class="form-group">
+                    <label>คุณถนัดมือข้างใด?</label>
+                    <select id="hand" required>
+                        <option value="" disabled selected>เลือกมือที่ถนัด</option>
+                        <option value="ซ้าย">มือซ้าย</option>
+                        <option value="ขวา">มือขวา</option>
+                        <option value="ทั้งสองข้าง">ถนัดทั้งสองข้าง</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>เมื่อเช้าก้าวขาข้างใดออกจากบ้านก่อน?</label>
+                    <select id="leg" required>
+                        <option value="" disabled selected>เลือกขาที่ก้าว</option>
+                        <option value="ซ้าย">ขาซ้าย</option>
+                        <option value="ขวา">ขาขวา</option>
+                        <option value="จำไม่ได้">จำไม่ได้จริงๆ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>เรื่องที่ต้องการให้หมอแมนทำนาย:</label>
+                    <select id="category" required>
+                        <option value="" disabled selected>เลือกเรื่องที่อยากรู้</option>
+                        <option value="การงาน">💼 การงาน</option>
+                        <option value="การเงิน">💰 การเงิน</option>
+                        <option value="ความรัก">❤️ ความรัก</option>
+                        <option value="สุขภาพ">🌿 สุขภาพ</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">🔮 เปิดดวงชะตา!</button>
+                <button type="button" onclick="showScreen('screen-welcome')" class="btn-secondary">กลับไปหน้าแรก</button>
+            </form>
+        </div>
+
+        <div id="screen-result" class="screen">
+            <div id="loading-state">
+                <div class="spinner">☯️</div>
+                <h3>หมอแมนกำลังเพ่งจิต...</h3>
+                <p>โปรดรอสักครู่ ดวงดาวกำลังเรียงตัว...</p>
+            </div>
+            
+            <div id="prediction-state" class="hidden">
+                <h2>✨ คำทำนายของคุณ ✨</h2>
+                <div id="prediction-text" class="prediction-box"></div>
+                <button onclick="resetApp()" class="btn-primary">ดูดวงเรื่องอื่นอีกครั้ง 🌙</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
