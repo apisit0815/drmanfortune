@@ -1,5 +1,5 @@
 // 🚨 นำ Web App URL ของ Google Apps Script มาใส่ในเครื่องหมายคำพูดนี้
-const GAS_WEB_APP_URL = "ใส่_URL_ของ_GOOGLE_APPS_SCRIPT_ตรงนี้_ครับ";
+const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz9WXSXJjWHTkH9hIR7wBgJeCx7-q4XUVprLHCoXbJug7_KNVz_C0wZA7dzN3fRywbPtw/exec";
 
 // ฟังก์ชันสลับหน้าจอ
 function showScreen(screenId) {
